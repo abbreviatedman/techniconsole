@@ -1,0 +1,26 @@
+{
+  "name": "techniconsole",
+  "version": "0.1.0",
+  "description": "A console wrapper intended to be extensible. Thoroughly unfinished as of yet.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abbreviatedman/techniconsole.git"
+  },
+  "keywords": [
+    "console",
+    "logging"
+  ],
+  "author": "Colin Jaffe <balloonasaurus@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abbreviatedman/techniconsole/issues"
+  },
+  "homepage": "https://github.com/abbreviatedman/techniconsole#readme",
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
+}
