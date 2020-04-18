@@ -5,10 +5,11 @@ const boxen = require( 'boxen' )
 
 
 const techniconsole = {
-  withLabel( values ) {
-    Object.keys( values ).forEach( ( key ) => {
-      console.log( colors.magenta( key ) )
-      console.log( colors.magenta.bold( '-> ' ), colors.cyan( values[key] ) )
+  withLabel( variables ) {
+    Object.keys( variables ).forEach( ( variableName ) => {
+      const value = variables[variableName]
+      console.log( colors.magenta( variableName ) )
+      console.log( colors.magenta.bold( '-> ' ), colors.cyan( value ) )
       console.log( '' )
     })
   },
@@ -19,8 +20,9 @@ const techniconsole = {
   },
 
   banner: ( str ) => {
+    const rows = wordWrap( rowWidth - 10 )(str)
+
     const rowWidth = termSize().columns
-    const lines = wordWrap( rowWidth - 10 )(str)
     const strWidth = Math.min( str.length, rowWidth - 10 )
     const horizontalPadding = Math.round( ( rowWidth - strWidth ) / 2 ) - 5
 
@@ -40,7 +42,7 @@ const techniconsole = {
 
     console.log(
       colors.cyan(
-        boxen( lines.toUpperCase(), options )
+        boxen( rows.toUpperCase(), options )
       )
     )
 
