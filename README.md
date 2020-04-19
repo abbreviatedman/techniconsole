@@ -13,9 +13,9 @@ I mean... everything, right?
 
 But even though there are many better tools for debugging our code, we still reach for `console.log` way more than we should, and _if_ we're going to do that, let's at least make our logging less bad, yeah?
 
-This is moderately easy to do with some amazing libraries like [colors](https://www.npmjs.com/package/colors) and [boxen](https://www.npmjs.com/package/boxen), but they're designed (and designed well!) to be used as permanent solutions within a CLI app, and are thus a bit burdensome to set up just to log something quickly, get out, and (hopefully), delete later.
+This is moderately easy to do with some amazing libraries like [colors](https://www.npmjs.com/package/colors) and [boxen](https://www.npmjs.com/package/boxen), but they're designed (and designed well!) to be used as permanent solutions within a CLI app, and are thus a bit burdensome to set up just to log something quickly, get out, and (hopefully) delete later.
 
-So that's what Techniconsole is for. Log the results of code in an easily-parsed, expressive way, so that you can get the info you need without losing everything else, delete your log, and get right back to work.
+So that's what Techniconsole is for. Log the results of code in an easily-parsed, expressive way, so that you can get the info you need without losing everything else. Then you can delete your log and get right back to work.
 
 It's also great for showing results of code to others!
 
