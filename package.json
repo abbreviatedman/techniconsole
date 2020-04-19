@@ -21,9 +21,6 @@
   },
   "homepage": "https://github.com/abbreviatedman/techniconsole#readme",
   "dependencies": {
-    "boxen": "^4.2.0",
-    "colors": "^1.4.0",
-    "term-size": "^2.2.0",
-    "wordwrap": "^1.0.0"
+    "colors": "^1.4.0"
   }
 }
