@@ -3,7 +3,7 @@ const colors = require ( 'colors' )
 
 const atTop = function ( str ) {
   console.clear ()
-  console.log ( str )
+  console.log ( colors.bgMagenta.cyan.bold ( str ) )
 }
 
 
