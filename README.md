@@ -41,7 +41,7 @@ npm install techniconsole
   
 ### label
 
-The only method fully implemented so far, `label` takes in an object and logs the key as a label for the value.
+The only method fully implemented so far, `label` takes in an object and logs the keys as labels for the values.
 
 ![a screenshot of the `label` method in action](./assets/screenshots/label-1.png)
 
