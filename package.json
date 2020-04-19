@@ -1,6 +1,6 @@
 {
   "name": "techniconsole",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A console wrapper intended to be extensible. Thoroughly unfinished as of yet.",
   "main": "index.js",
   "scripts": {
