@@ -1,6 +1,9 @@
+const colors = require( 'colors' )
+
+
 const log = function ( ...vals ) {
-  vals.forEach((val) => {
-    console.log(`                                  (@@@@@@@@
+
+  console.log(`                                  (@@@@@@@@
                                   (@@    @@@/                                   
                                   (@@      @@@                                  
           @@@@@@@@@@@@@@@@@@@@@@@@@@@        @@@@@@@@@@@@@@@@@@@@@@@@@@         
@@ -17,8 +20,8 @@ const log = function ( ...vals ) {
     (@@@     @@@@@@@@@@     .@@@@@@@@@@@@@@@@@@@@                        @@@    
        @@@@@             @@@@/                                       @@@@@      
            @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          `)
-    this.withLabel({[`Well... you did ask for a log!`]: val})
-  })
+  console.log ( colors.cyan ( 'You asked for a log...' ) )
+  vals.forEach((val) => console.log ( colors.magenta( val ) ) )
 }
 
 
