@@ -3,7 +3,7 @@ const colors = require ( 'colors' )
 
 const atTop = function ( ...strs ) {
   console.clear (  )
-  console.log( colors.cyan( `We've cleared all logs above here to show you the following value(s):` ) )
+  console.log( colors.cyan( `You've used .atTop to clear all previous logs to highlight the following value(s):` ) )
   console.log( '' )
   strs.forEach ( ( str ) => console.log ( colors.bgMagenta.cyan.bold ( str ) ) )
 }
