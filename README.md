@@ -2,19 +2,42 @@
 
 A set of easy-to-use `console.log` alternatives for clearer code demonstrations.
 
+- [Installation](#installation)
+- [Introduction - What's Wrong With console.log?](#introduction-whats-wrong-with-consolelog)
+- [Design Principles](#design-principles)
+- [Methods](#methods)
+    + [withLabel](#withlabel)
+    + [asBanner](#asbanner)
+    + [atTop](#attop)
+- [On Variable Names And Clarity](#on-variable-names-and-clarity)
+- [Roadmaps For Future Versions](#roadmaps-for-future-versions)
+- [Contributing](#contributing)
 
-# What's Wrong With `console.log`?
-### The TLDR, Conversational Intro
 
-I mean... _everything_ is wrong with `console.log`, right?
+<a name="installation"></a>
+# Installation
 
-But mainly the parsing.
+In the working directory of an `npm`-controlled project: 
 
-1. It tends to blend in with the terminal's info-dump, making it difficult to find what you're trying to log out. More like `console.needleInAHaystack`, amirite?
-2. If you care about the _other_ information in the terminal, well, that becomes harder to parse as well.
-3. Once you have even a few of them, you get a new parsing task as well: telling one logged value from another.
+```bash
+npm install techniconsole --save-dev
+```
 
-A common solution to parsing your logging is to make sure each one is labeled in some way, which requires `console.log` usage like the following increasingly effective and verbose examples:
+
+<a name="introduction-whats-wrong-with-consolelog"></a>
+# Introduction - What's Wrong With console.log?
+
+I mean... _everything_ is wrong with `console.log`, right? 
+
+It's particularly poor as a debugging tool, but it often tricks developers, especially new ones, into thinking it is, instead, a great one.
+
+But even if you're going to use it more to peek at a value and then delete the log, or to demonstrate a code technique or tool, rather than debugging), its plain-text approach can lead to some very difficult-to-parse output in the following ways:
+
+1. It tends to blend in with the terminal's info-dump, making it hard to find what you're trying to log out. More like `console.needleInAHaystack`, amirite?
+2. If you care about the _other_ information in the terminal, well, every console.log makes that harder to find.
+3. Once you have a few more of them, you get a brand new parsing task: telling one logged value from another.
+
+A common solution to parsing your logging is to make sure each one is labeled in some way, which requires `console.log` usage like the following increasingly effective but verbose examples:
 
 ```javascript
 console.log('The value of foo is: ', foo)
@@ -37,8 +60,8 @@ Since I'm so often trying to do a quick-and-dirty look at a certain value, parti
 And so: this library.
 
 
-# Techniconsole Design Principles
-### The More Formal Introduction
+<a name="design-principles"></a>
+# Design Principles
 
 Techniconsole is a set of `console.log`-style methods specifically designed to produce a clear signal in a noisy console world. It achieves this through three basic design principles:
 
@@ -47,16 +70,10 @@ Techniconsole is a set of `console.log`-style methods specifically designed to p
   3. Require no set-up. There is no configuration needed for this library. Nor, for the most part, is any possible. This is a highly opinionated set of methods for displaying the results of code, and we've developed it so that _you_ don't have to waste your time re-inventing or even tinkering with the logging wheel. (Like... we did.)
 
 
-# Techniconsole Installation
-
-In the working directory of an `npm`-controlled project: 
-
-```bash
-npm install techniconsole --save-dev
-```
-
-# Techniconsole Methods
+<a name="methods"></a>
+# Methods
   
+<a name="withlabel"></a>
 ### withLabel
 
 `withLabel` takes in an object and logs the keys as labels for the values.
@@ -78,6 +95,7 @@ Or, going the other way, a common pattern is to label values in a succinct way u
 ![a screenshot of sevearl values being passed into `withLabel` using object property shorthand syntax](./assets/screenshots/with-label-4.png)
 
 
+<a name="asbanner"></a>
 ### asBanner
 
 `asBanner` takes in a message (usually as a string, but any other type is converted) and prints it out as a banner for either demarcating one section from another or calling attention to a particular log (although see [atTop](#atTop) for a better alternative to singling out one log). It has the following attention-grabbing features:
@@ -96,6 +114,11 @@ You can manually control what should go in each row of a banner by passing in a 
 
 ![a screenshot of an asBanner call with manually-created rows](./assets/screenshots/as-banner-3.png)
 
+Of course, if one of your intended rows exceeds the width of the display space, it will still be automatically wrapped.
+
+![a screenshot of an asBanner manual-control calls still requiring automatic wrapping](./assets/screenshots/as-banner-4.png)
+
+
 <a name="atTop"></a>
 ### atTop
 
@@ -104,7 +127,8 @@ You can manually control what should go in each row of a banner by passing in a 
 A simple method that will clear all logging above it so that the new value appears on top. Great for temporarily highlighting one value, with a built-in reminder of _why_ you're not seeing other logs.
 
 
-### On Variable Names And Clarity
+<a name="on-variable-names-and-clarity"></a>
+# On Variable Names And Clarity
  
 Did you know that you can use any name for a library you DW please? It's _your_ variable, no one else's! (You probably already knew this; if you didn't, it's time for a TIL tweet!)
 
@@ -112,29 +136,29 @@ Did you know that you can use any name for a library you DW please? It's _your_ 
 
 Did you know that we have _opinions_ about which you should use? We do! The following variable names are in order of objectively worst to objectively best, so allow us to tell you our _objective_ reasoning, and then... you do you, my friend. You do you.
 
-1. `bob` - "Hahahahahaha, they named it something _silly_. Now... uh... what does it do again? How do I use this?" What you gain in a one-time laugh you lose in usability ten-fold.
+1. `bob` - "Hahahahahaha, they named it something _silly_. Now... uh... what does it do again? How do I use this?" What you gain in a one-time laugh you lose ten-fold in usability.
 * `console` - There's an argument for this--to the point where we're constantly considering whether we should wrap the native console object so your `console.log` calls get converted to use this library--but ultimately, this library _isn't_ a drop-in replacement for `console`. Treating it as such can easily lead to a lack of clarity of where one starts and the other ends.
 * `tc` - A nice short variable name, but it makes it hard for anyone seeing your code to easily grok what it does. If you've ever come back to your own code after a while, you know it's easy to forget such things yourself! Plus... you really don't need short variable names if you're using tab-completion. Are you using tab-completion? You really should be using tab-completion!
 * `techniconsole` - An excellent name indeed! Whoever thought of it must be very, _very_ handsome.
-* `tonsole` - We might mildly prefer this one. It's catchy--the greatest tragedy of our time is that [an excellent library](https://www.npmjs.com/package/tonsole) already grabbed the package name--and it quickly reads as a `console` alternative.
+* `tonsole` - We might slightly prefer this one. It's catchy--the greatest tragedy of our time is that [an excellent library](https://www.npmjs.com/package/tonsole) already grabbed the package name--and it quickly reads as a `console` alternative.
 
-Forge your own destiny!
+Again though, it's _your_ variable!
 
-### Roadmaps For Future Versions
 
-*1.0*
-
-* [ ] Has all three basic planned methods (with a name change for `label` to `withLabel` to match new naming convention).
-* [ ] Allow an arbitrary number of arguments for `asBanner` and `atTop`.
-
+<a name="roadmaps-for-future-versions"></a>
+# Roadmaps For Future Versions
 
 *1.1*
 
-* [ ] Create composable versions, so that one could have a banner or labelled value on top, or a labelled value inside a banner.
 * [ ] Convert style and layout to work within a browser console.
+
+*2.0*
+
+* [ ] Create composable versions, so that one could have a banner or labelled value on top, or a labelled value inside a banner.
 * [ ] Pretty-print all objects.
 
 
-### Contributing
+<a name="contributing"></a>
+# Contributing
 
-No formal system yet, but we're open to suggestions on this project, as well as assistance setting up a formal system for accepting contributions.
+We don't currently have a formal system yet for accepting contributions, but we're open to suggestions on this project as well as assistance setting up a formal system.
