@@ -122,15 +122,23 @@ Of course, if one of your intended rows exceeds the width of the display space, 
 <a name="atTop"></a>
 ### atTop
 
-**Still Under Construction**
+A simple method that will clear all logging above it so that the logged value appears at the very top of the terminal. Great for temporarily highlighting values, with a built-in reminder of _why_ you're not seeing other logs:
 
-A simple method that will clear all logging above it so that the new value appears on top. Great for temporarily highlighting one value, with a built-in reminder of _why_ you're not seeing other logs.
+![a screenshot of logs above atTop being cleared](./assets/screenshots/at-top-1.png)
+
+Please note that `atTop` does _not_ clear any logs below it:
+
+![a screenshot of logs below atTop failing to be cleared](./assets/screenshots/at-top-2.png)
+
+And you can always pass multiple values:
+
+![a screenshot of multiple values logged by atTop](./assets/screenshots/at-top-3.png)
 
 
 <a name="on-variable-names-and-clarity"></a>
 # On Variable Names And Clarity
  
-Did you know that you can use any name for a library you DW please? It's _your_ variable, no one else's! (You probably already knew this; if you didn't, it's time for a TIL tweet!)
+Did you know that you can use any name for a library you _DW please_? It's _your_ variable, no one else's! (You probably already knew this; if you didn't, it's time for a TIL tweet!)
 
 ![a screenshot of various names you could give the variable you create when you `require` Techniconsole](./assets/screenshots/require-names.png)
 
