@@ -1,7 +1,7 @@
 {
   "name": "techniconsole",
   "version": "0.2.1",
-  "description": "A console wrapper intended to be extensible. Thoroughly unfinished as of yet.",
+  "description": "A set of easy-to-use console.log alternatives for clearer code demonstrations.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,7 +12,27 @@
   },
   "keywords": [
     "console",
-    "logging"
+    "logging",
+    "console.log",
+    "color",
+    "colour",
+    "colors",
+    "colours",
+    "terminal",
+    "string",
+    "strings",
+    "formatting",
+    "rgb",
+    "log",
+    "wrap",
+    "word wrap",
+    "wrapping",
+    "debug",
+    "debugging",
+    "console logger",
+    "print",
+    "printing",
+    "printer"
   ],
   "author": "Colin Jaffe <balloonasaurus@gmail.com>",
   "license": "MIT",
