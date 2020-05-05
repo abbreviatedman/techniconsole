@@ -80,13 +80,7 @@ Or, going the other way, a common pattern is to label values in a succinct way u
 
 ### asBanner
 
-`asBanner` takes in a message (usually as a string, but any other type is converted) and prints it out as a banner with the following attention-grabbing features:
-
-/*
-
-ADD A REAL (BRIEF?) EXPLAINER OF WHY YOU WOULD WANT A BANNER.
-
-*/
+`asBanner` takes in a message (usually as a string, but any other type is converted) and prints it out as a banner for either demarcating one section from another or calling attention to a particular log (although see [atTop](#atTop) for a better alternative to singling out one log). It has the following attention-grabbing features:
 
 * The banner is full-width, even if the message isn't. Spans the entire width of the terminal window (or close to it).
 * The banner and text are each in different neon, hard-to-miss colors.
@@ -94,11 +88,15 @@ ADD A REAL (BRIEF?) EXPLAINER OF WHY YOU WOULD WANT A BANNER.
 
 ![a screenshot of a basic asBanner call](./assets/screenshots/as-banner-1.png)
 
-* And, the final formatting feature: all text is wrapped without breaking words.
+* And the final formatting feature: all text is wrapped without breaking words.
 
 ![a screenshot of an asBanner call in which a multi-line passage is wrapped](./assets/screenshots/as-banner-2.png)
 
+You can manually control what should go in each row of a banner by passing in a separate string for each row.
 
+![a screenshot of an asBanner call with manually-created rows](./assets/screenshots/as-banner-3.png)
+
+<a name="atTop"></a>
 ### atTop
 
 **Still Under Construction**
