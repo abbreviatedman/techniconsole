@@ -1,6 +1,6 @@
 {
   "name": "techniconsole",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A set of easy-to-use console.log alternatives for clearer code demonstrations.",
   "main": "index.js",
   "scripts": {
