@@ -31,13 +31,13 @@ I mean... _everything_ is wrong with `console.log`, right?
 
 It's particularly poor as a debugging tool, but it often tricks developers, especially new ones, into thinking it is, instead, a great one.
 
-But even if you're going to use it more to peek at a value and then delete the log, or to demonstrate a code technique or tool, rather than debugging), its plain-text approach can lead to some very difficult-to-parse output in the following ways:
+But even if you're going to use it more to peek at a value and then delete the log, or to demonstrate a code technique or tool, rather than debugging, its plain-text approach can lead to some very difficult-to-parse output in the following ways:
 
 1. It tends to blend in with the terminal's info-dump, making it hard to find what you're trying to log out. More like `console.needleInAHaystack`, amirite?
 2. If you care about the _other_ information in the terminal, well, every console.log makes that harder to find.
 3. Once you have a few more of them, you get a brand new parsing task: telling one logged value from another.
 
-A common solution to parsing your logging is to make sure each one is labeled in some way, which requires `console.log` usage like the following increasingly effective but verbose examples:
+A common solution to parsing your logging is to make sure each one is labeled in some way, which requires `console.log` usage like the following increasingly-effective-but-verbose examples:
 
 ```javascript
 console.log('The value of foo is: ', foo)
@@ -138,7 +138,7 @@ And you can always pass multiple values:
 <a name="on-variable-names-and-clarity"></a>
 # On Variable Names And Clarity
  
-Did you know that you can use any name for a library you _DW please_? It's _your_ variable, no one else's! (You probably already knew this; if you didn't, it's time for a TIL tweet!)
+Did you know that you can use any name for a library you _DW please_? It's _your_ variable, no one else's! (You probably already knew this; if you didn't… maybe it's time for a TIL tweet?)
 
 ![a screenshot of various names you could give the variable you create when you `require` Techniconsole](./assets/screenshots/require-names.png)
 
@@ -147,8 +147,7 @@ Did you know that we have _opinions_ about which you should use? We do! The foll
 1. `bob` - "Hahahahahaha, they named it something _silly_. Now... uh... what does it do again? How do I use this?" What you gain in a one-time laugh you lose ten-fold in usability.
 * `console` - There's an argument for this--to the point where we're constantly considering whether we should wrap the native console object so your `console.log` calls get converted to use this library--but ultimately, this library _isn't_ a drop-in replacement for `console`. Treating it as such can easily lead to a lack of clarity of where one starts and the other ends.
 * `tc` - A nice short variable name, but it makes it hard for anyone seeing your code to easily grok what it does. If you've ever come back to your own code after a while, you know it's easy to forget such things yourself! Plus... you really don't need short variable names if you're using tab-completion. Are you using tab-completion? You really should be using tab-completion!
-* `techniconsole` - An excellent name indeed! Whoever thought of it must be very, _very_ handsome.
-* `tonsole` - We might slightly prefer this one. It's catchy--the greatest tragedy of our time is that [an excellent library](https://www.npmjs.com/package/tonsole) already grabbed the package name--and it quickly reads as a `console` alternative.
+* `techniconsole` - An excellent name indeed! Whoever thought of it must be very, _very_ handsome. It reads as exactly what it is--a colorful console logger.
 
 Again though, it's _your_ variable!
 
@@ -169,4 +168,4 @@ Again though, it's _your_ variable!
 <a name="contributing"></a>
 # Contributing
 
-We don't currently have a formal system yet for accepting contributions, but we're open to suggestions on this project as well as assistance setting up a formal system.
+We don't currently have a formal system for accepting contributions, but we're open to suggestions on this project as well as assistance setting up a formal system.
